@@ -1,0 +1,42 @@
+const
+
+- const behaves like a let var, except it cannot be reassigned
+- const must be assigned a value at declaration
+- const does not define a constant value, but a constant reference to a value
+- you cannot change the primitive values of a constant primitive object, but you can change the properties of a constant object
+- const arrays can change, but you cannot reassign
+
+let
+
+- variables defined with let have Block Scope
+- let can be used in relation to Function and Global Scope, as well
+- Global variables definedwith the let keyword do not belong to the window object
+- redecalring a let variable with let in the same scope is not allowed
+- using a let variable before it is declared will result in a ReferenceError
+- when let is used to define a variable in a loop, the variable will be visible withing the loop
+- redeclaring a variable using the let keyword, inside a block, will not redeclare the variable outside the block.
+
+EX: 
+var x = 10; // here x = 10
+{ 
+    let x = 2; // here x = 2
+}
+// here x = 10
+
+///
+
+path.join() locates the current directory path of the project
+__dirname = current directory of project
+
+- menu obejcts in Electron are just an array of objects
+
+accelerator = add hotkey event
+platform = 'darwin' = iOS
+
+ipcRenderer = instance of EventEmitter class. sned sync and async messages from render process (web page) to the main process.
+
+EXAMPLE: think JSON
+ipcRenderer.send(dataName, dataValue);
+
+webContents = an EventEmitter. responsible for rendering and controlling a web page. property of BrowserWindow object.
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Item to List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div>
+                <label>Enter Item</label>
+                <input type="text" id="item" autofocus>
+            </div>
+            <button class="btn wave-effects waves-light" type="submit" accesskey="enter">add item</button>
+        </form>
+    </div>
+
+    <!--capture the item entered-->
+    <script>
+        // import electron
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        const form = document.querySelector('form'); // grab form from DOM
+        form.addEventListener('submit', submitForm);
+
+        // submit
+        function submitForm(e){
+            e.preventDefault(); // prevent default of writing to file
+            const item = document.querySelector('#item').value; // grab element from DOM
+            ipcRenderer.send('item:add', item);
+        }
+    </script>
+</body>
+</html>
