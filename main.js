@@ -22,7 +22,7 @@ app.on('ready', function() {
 
     // load HTML file into window 
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'mainWindow.html'), // current directory
+        pathname: path.join(__dirname, './html/mainWindow.html'), // current directory
         protocol: 'file:', // file in directory
         slashes: true // adds slashes to the directory path when located by loadURL
     }));
@@ -50,7 +50,7 @@ function createAddWindow() {
 
     // load HTML file into window 
     addWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'addWindow.html'), 
+        pathname: path.join(__dirname, './html/addWindow.html'), 
         protocol: 'file:',
         slashes: true 
     }));
