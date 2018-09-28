@@ -11,8 +11,9 @@ process.env.NODE_ENV = 'production';
 
 // this is the main window being displayed // see notes on let
 let mainWindow;
+
 // additional windows
-let addWindow;
+let addItemWindow;
 
 // Listen for the app to be ready, then do something
 app.on('ready', function() {
@@ -40,24 +41,24 @@ app.on('ready', function() {
 });
 
 // handle create add window
-function createAddWindow() {
+function createAddItemWindow() {
 
-    addWindow = new BrowserWindow({
+    addItemWindow = new BrowserWindow({
         width: 300,
         height: 200,
         title: 'Add Item to List'
     });
 
     // load HTML file into window 
-    addWindow.loadURL(url.format({
-        pathname: path.join(__dirname, './html/addWindow.html'), 
+    addItemWindow.loadURL(url.format({
+        pathname: path.join(__dirname, './html/addItemWindow.html'), 
         protocol: 'file:',
         slashes: true 
     }));
 
     // Garbage collection
-    addWindow.on('closed', function(){
-        addWindow = null;
+    addItemWindow.on('closed', function(){
+        addItemWindow = null;
     });
 };
 
@@ -65,7 +66,7 @@ function createAddWindow() {
 ipcMain.on('item:add', function(e, item){
     // console.log(item); // debug
     mainWindow.webContents.send('item:add', item);
-    addWindow.close();
+    addItemWindow.close();
 });
 
 // create titlebar menu template // menus are an array
@@ -77,7 +78,7 @@ const mainMenuTemp = [
                 label: 'Add Item',
                 accelerator: process.platform == 'darwin' ? 'Command+B' : 'Ctrl+B',
                 click(){
-                    createAddWindow();
+                    createAddItemWindow();
                 }
             },
             {
