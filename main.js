@@ -2,6 +2,7 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
+const module_js = require("./module_javascript/addItem.js")
 
 // get obejcts from Electron
 const {app, BrowserWindow, Menu, ipcMain} = electron;
