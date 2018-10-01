@@ -11,24 +11,24 @@
                 <label>Enter Item</label>
                 <input type="text" id="item" autofocus>
             </div>
-            <button class="btn wave-effects waves-light" type="submit" accesskey="enter" onclick="submitItem">add item</button>
+            <button class="btn wave-effects waves-light" type="submit" accesskey="enter" onclick="submitItem()">add item</button>
         </form>
     </div>
 
     <script>
-        // // import electron
-        // const electron = require('electron');
-        // const {ipcRenderer} = electron;
-        // const form = document.querySelector('form'); // grab form from DOM
-        // form.addEventListener('submit', submitItem);
+        // import electron
+        const electron = require('electron');
+        const {ipcRenderer} = electron;
+        const form = document.querySelector('form'); // grab form from DOM
+        form.addEventListener('submit', submitItem);
 
-        // // submit
-        // function submitItem(e){
-        //     e.preventDefault(); // prevent default of writing to file
+        // submit
+        function submitItem(e){
+            e.preventDefault(); // prevent default of writing to file
 
-        //     const item = document.querySelector('#item').value; // grab element from DOM
-        //     ipcRenderer.send('item:add', item);
-        // }
+            const item = document.querySelector('#item').value; // grab element from DOM
+            ipcRenderer.send('item:add', item);
+        }
     </script>
 
 </body>
