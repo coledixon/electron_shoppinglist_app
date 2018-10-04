@@ -1,6 +1,7 @@
 const electron = require('electron');
 const {ipcRenderer} = electron;
 
+// MAKE THIS WORK
 module.exports = function() {
 
     // add item

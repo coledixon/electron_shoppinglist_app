@@ -1,14 +1,16 @@
-// import electron
 const electron = require('electron');
-const {ipcRenderer} = electron;
+const ipc = electron.ipcRenderer;
+const form = document.querySelector('form'); // grab form from DOM
+form.addEventListener('submit', submitItem);
 
- module.exports = function() {
+// MAKE THIS WORK
+module.exports = function() {
     // submit
     function submitItem(e){
         console.log(e); // debug
         e.preventDefault(); // prevent default of writing to file
 
         const item = document.querySelector('#item').value; // grab element from DOM
-        ipcRenderer.send('item:add', item);
+        ipc.send('item:add', item);
     }
 };
