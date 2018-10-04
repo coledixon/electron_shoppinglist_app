@@ -2,7 +2,8 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
-// require.main.require("./module_javascript/addItem.js")
+const addItemJs = require('./module_javascript/addItem.js');
+const mainWindowJs = require('./module_javascript/mainWindow.js');
 
 // get obejcts from Electron
 const {app, BrowserWindow, Menu, ipcMain} = electron;
@@ -65,7 +66,7 @@ function createAddItemWindow() {
 
 // catch item:add data
 ipcMain.on('item:add', function(e, item){
-    // console.log(item); // debug
+    console.log(item); // debug
     mainWindow.webContents.send('item:add', item);
     addItemWindow.close();
 });
