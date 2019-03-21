@@ -25,7 +25,7 @@ app.on('ready', function() {
 
     // load HTML file into window 
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, './html/mainWindow.html'), // current directory
+        pathname: path.join(__dirname, './src/mainWindow.html'), // current directory
         protocol: 'file:', // file in directory
         slashes: true // adds slashes to the directory path when located by loadURL
     }));
@@ -53,7 +53,7 @@ function createAddItemWindow() {
 
     // load HTML file into window 
     addItemWindow.loadURL(url.format({
-        pathname: path.join(__dirname, './html/addItemWindow.html'), 
+        pathname: path.join(__dirname, './src/addItemWindow.html'), 
         protocol: 'file:',
         slashes: true 
     }));
