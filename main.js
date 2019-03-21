@@ -2,8 +2,6 @@
 const electron = require('electron');
 const url = require('url');
 const path = require('path');
-const addItemJs = require('./module_javascript/addItem.js');
-const mainWindowJs = require('./module_javascript/mainWindow.js');
 
 // get obejcts from Electron
 const {app, BrowserWindow, Menu, ipcMain} = electron;
@@ -25,7 +23,7 @@ app.on('ready', function() {
 
     // load HTML file into window 
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, './src/mainWindow.html'), // current directory
+        pathname: path.join(__dirname, './src/index.html'), // current directory
         protocol: 'file:', // file in directory
         slashes: true // adds slashes to the directory path when located by loadURL
     }));
@@ -53,7 +51,7 @@ function createAddItemWindow() {
 
     // load HTML file into window 
     addItemWindow.loadURL(url.format({
-        pathname: path.join(__dirname, './src/addItemWindow.html'), 
+        pathname: path.join(__dirname, './src/addItem.html'), 
         protocol: 'file:',
         slashes: true 
     }));
