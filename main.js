@@ -44,6 +44,7 @@ app.on('ready', function() {
 function createAddItemWindow() {
 
     addItemWindow = new BrowserWindow({
+        frame: false, // remove toolbar menu
         width: 300,
         height: 200,
         title: 'Add Item to List'
