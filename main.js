@@ -45,6 +45,8 @@ function createAddItemWindow() {
 
     addItemWindow = new BrowserWindow({
         frame: false, // remove toolbar menu
+        alwaysOnTop:true, // 
+        transparent:true,
         width: 300,
         height: 200,
         title: 'Add Item to List'
@@ -93,6 +95,19 @@ const mainMenuTemp = [
                 accelerator: process.platfrom == 'darwin' ? 'Command+Q' : 'Ctrl+Q', // delineate between iOS & Windows
                 click() { // add click event
                     app.quit();
+                }
+            }
+        ]
+    },
+    {
+        // CD: built logic for toggling DevTools for js debugging outside main.js
+        label: 'View',
+        submenu: [
+            {
+                label: 'Toggle DevTools',
+                accelerator: process.platform == 'darwin' ? 'Command+I' : 'Ctrl+I',
+                click(item, focusedWindow) {
+                    focusedWindow.toggleDevTools();
                 }
             }
         ]

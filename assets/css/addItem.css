@@ -1,0 +1,25 @@
+/* CD: custom CSS for layout && design */
+
+body {
+    background: #DFDFDF;
+    color: #000;
+    overflow: hidden;
+}
+
+p.addItem {
+    background: #c3c3c3;
+    margin: 0;
+    padding: 20px;
+    -webkit-app-region: drag; /* allows for the window to be draggable */
+}
+
+#closeBtn {
+    cursor: pointer;
+    padding: 20px;
+    text-decoration: underline;
+}
+
+html, body {
+    background: rgba(226, 226, 226, 0.7);
+    height: 100%;
+}

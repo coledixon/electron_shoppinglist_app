@@ -3,8 +3,12 @@
 <head>
     <title>Add Item to List</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../assets/css/addItem.css">
 </head>
 <body>
+
+    <p class="addItem">ADD ITEM</p> <!-- added header bar -->
+
     <div class="container">
         <form>
             <div>
@@ -14,6 +18,8 @@
             <button class="btn wave-effects waves-light" type="submit" accesskey="enter">add item</button>
         </form>
     </div>
+
+    <a id="closeBtn">close window</a><br> <!-- added close button because object's frame is withheld in main.js -->
 
     <script src="addItem.js">
         // // import electron
