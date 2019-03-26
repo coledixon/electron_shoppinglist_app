@@ -127,7 +127,7 @@ if (process.env.NODE_ENV != 'production'){
             {
                 label: 'Toggle DevTools',
                 accelerator: process.platfrom == 'darwin' ? 'Command+I' : 'Ctrl+I',
-                click(item, focusedWindow){ // instatiate focus on open window
+                click(item, focusedWindow){ // instantiate focus on open window
                     focusedWindow.toggleDevTools();
                 }
             },
