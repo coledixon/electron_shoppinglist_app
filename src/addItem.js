@@ -18,11 +18,10 @@ clsBtn.addEventListener('click', function(event) {
 });
 
 // submit
-function submitItem(e){
+function submitItem(e) {
 
-    console.log(e);
     e.preventDefault(); // prevent default of writing to file
     
     const item = document.querySelector('#item').value; // grab element from DOM
-    //ipc.send('item:add', item);
+    ipc.send('item:add', item);
 }
