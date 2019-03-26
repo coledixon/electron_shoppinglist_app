@@ -13,7 +13,8 @@ const clsBtn = document.getElementById('closeBtn');
 clsBtn.addEventListener('click', function(event) {
     
     var window = remote.getCurrentWindow(); // close current window only
-    window.close();
+    // CD: removed for debugging
+    // window.close();
 
 });
 

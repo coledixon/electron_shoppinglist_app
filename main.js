@@ -60,16 +60,18 @@ function createAddItemWindow() {
     }));
 
     // Garbage collection
-    addItemWindow.on('closed', function(){
-        addItemWindow = null;
-    });
+    // CD: removed for debugging
+    // addItemWindow.on('closed', function(){
+    //    addItemWindow = null;
+    // });
 };
 
 // catch item:add data
 ipcMain.on('item:add', function(e, item){
     console.log(item); // debug
     mainWindow.webContents.send('item:add', item);
-    addItemWindow.close();
+    // CD: removed for debugging
+    // addItemWindow.close();
 });
 
 // create titlebar menu template // menus are an array
