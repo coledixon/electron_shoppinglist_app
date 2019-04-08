@@ -4,7 +4,7 @@ const ul = document.querySelector('ul');
 
 // add item
 ipcRenderer.on('item:add', function(e, item){
-    
+
     const li = document.createElement('li'); // create li element through DOM manipulation
     const itemText = document.createTextNode(item); // create the text var from item passed
 
