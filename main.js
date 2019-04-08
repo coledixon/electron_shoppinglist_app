@@ -15,6 +15,9 @@ let mainWindow;
 // additional windows
 let addItemWindow;
 
+
+/* GEN WINDOW OBJECTS */
+
 // Listen for the app to be ready, then do something
 app.on('ready', function() {
 
@@ -60,19 +63,13 @@ function createAddItemWindow() {
     }));
 
     // Garbage collection
-    // CD: removed for debugging
-    // addItemWindow.on('closed', function(){
-    //    addItemWindow = null;
-    // });
+    addItemWindow.on('closed', function(){
+        addItemWindow = null;
+    });
 };
 
-// catch item:add data
-ipcMain.on('item:add', function(e, item){
-    console.log(item); // debug
-    mainWindow.webContents.send('item:add', item);
-    // CD: removed for debugging
-    // addItemWindow.close();
-});
+
+/* GEN MENU TEMPLATE */
 
 // create titlebar menu template // menus are an array
 const mainMenuTemp = [
@@ -140,4 +137,13 @@ if (process.env.NODE_ENV != 'production'){
     });
 }
 
+
+/* IPC EVENT(s) */
+
+// catch item:add data
+ipcMain.on('item:add', function(e, item){
+    console.log(item); // debug
+    mainWindow.webContents.send('item:add', item);
+    addItemWindow.close();
+});
 
