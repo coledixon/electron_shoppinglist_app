@@ -32,6 +32,7 @@ function submitItem(e) {
     e.preventDefault(); // prevent default of writing to file
     
     const item = document.querySelector('#item').value; // grab element from DOM
+    if (!item) { return; }
     ipc.send('item:add', item);
 
 }
