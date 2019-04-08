@@ -142,8 +142,9 @@ if (process.env.NODE_ENV != 'production'){
 
 // catch item:add data
 ipcMain.on('item:add', function(e, item){
-    console.log(item); // debug
+
     mainWindow.webContents.send('item:add', item);
     addItemWindow.close();
+    
 });
 

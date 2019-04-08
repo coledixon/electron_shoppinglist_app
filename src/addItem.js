@@ -24,4 +24,5 @@ function submitItem(e) {
     
     const item = document.querySelector('#item').value; // grab element from DOM
     ipc.send('item:add', item);
+    
 }
