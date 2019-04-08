@@ -78,13 +78,14 @@ const mainMenuTemp = [
         submenu: [
             {
                 label: 'Add Item',
-                accelerator: process.platform == 'darwin' ? 'Command+B' : 'Ctrl+B',
+                accelerator: process.platform == 'darwin' ? 'Command+B' : 'Ctrl+Shift+A', // delineate between iOS & Windows
                 click(){
                     createAddItemWindow();
                 }
             },
             {
                 label: 'Clear Items',
+                accelerator: process.platform == 'darwin' ? 'Command+X' : 'Ctrl+Shift+X', // delineate between iOS & Windows
                 click(){
                     mainWindow.webContents.send('item:clear');
                 }
@@ -145,6 +146,6 @@ ipcMain.on('item:add', function(e, item){
 
     mainWindow.webContents.send('item:add', item);
     addItemWindow.close();
-    
+
 });
 
