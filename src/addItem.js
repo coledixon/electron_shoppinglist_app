@@ -7,9 +7,11 @@ const remote = electron.remote;
 const form = document.querySelector('form'); 
 form.addEventListener('submit', submitItem);
 
-// close button event logic
+// accessible refs to HTML button elems
+const addBtn = document.getElementById('addBtn')
 const clsBtn = document.getElementById('closeBtn');
 
+// close button event logic
 clsBtn.addEventListener('click', function(event) {
     
     var window = remote.getCurrentWindow(); // close current window only
@@ -17,12 +19,19 @@ clsBtn.addEventListener('click', function(event) {
 
 });
 
-// submit
+// add button event logic
+addBtn.addEventListener('click', function(e) {
+
+    submitItem();
+
+});
+
+// submit item through ipc
 function submitItem(e) {
 
     e.preventDefault(); // prevent default of writing to file
     
     const item = document.querySelector('#item').value; // grab element from DOM
     ipc.send('item:add', item);
-    
+
 }
