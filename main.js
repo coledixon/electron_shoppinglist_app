@@ -1,3 +1,6 @@
+// application runs via npm start from TERMINAL
+// VS CODE debugger causes issue with addBtn event (submitItem() > addItem.js)
+
 // import libraries // see notes on const
 const electron = require('electron');
 const url = require('url');
